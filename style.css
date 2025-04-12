@@ -1,0 +1,59 @@
+body {
+  font-family: sans-serif;
+  background: #1a1a1a;
+  margin: 0;
+  color: white;
+}
+
+svg {
+  display: block;
+  margin: auto;
+}
+
+.link {
+  stroke: #999;
+  stroke-width: 0.7;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+
+.link.highlight,
+.link.active {
+  stroke: orange;
+  stroke-width: 1.5;
+  opacity: 1;
+}
+
+.movie-label textPath {
+  fill: #ccc;
+  transition: fill 0.2s ease;
+}
+
+.movie-label.highlight textPath,
+.movie-label.active textPath {
+  fill: orange;
+  font-weight: bold;
+}
+
+.arc path {
+  transition: all 0.2s ease;
+}
+
+.arc.highlight path,
+.arc.active path {
+  stroke: orange;
+  stroke-width: 2.5px;
+  fill-opacity: 1;
+}
+
+#tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  display: none;
+  z-index: 10;
+}
