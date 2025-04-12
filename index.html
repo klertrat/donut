@@ -64,7 +64,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>🎬 Explore Genre-Movie Relationship</h1>
+      <h1>🎬 Movie in focus</h1>
       <p class="description">
         This visualization connects movie genres to individual films using a radial layout. Each arc represents a genre,
         sized by its frequency. Lines extend to the corresponding movies, labeled along the outer edge.
@@ -72,12 +72,49 @@
     </header>
 
     <div class="interactions">
-      <p class="hover-text">Click to isolate a genre</p>
+      <p class="hover-text">👇 Click to explore✨</p>
     </div>
 
-    <svg width="1000" height="1000"></svg>
+<div id="radar-tooltip" style="
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  font-size: 12px;
+  pointer-events: none;
+  display: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+"></div>
+    
+    
+    
+    
+    
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 60px; margin-top: 3rem;">
+  <!-- Donut Chart -->
+  <div style="flex-shrink: 0;">
+    <svg width="900" height="900"></svg>
   </div>
 
+  <!-- Radar Chart and Description (Right Side) -->
+  <div style="display: flex; flex-direction: column; align-items: center; margin-top: 2rem;">
+    <div id="radar-description" style="width: 260px; font-size: 14px; line-height: 1.5; text-align: left; margin-bottom: 1rem;">
+      <strong>Visual Composition</strong><br>
+      This radar chart displays the average visual features of the selected <em>movie</em> or <em>genre</em>.<br>
+      Values range from 0–5 across categories like faces, light, and environment cues.
+    </div>
+    <svg id="radar" width="400" height="400" style="margin-top: 160px;"></svg>
+  </div>
+</div>
+
+  
+  
+  
+  
+  
+  
+  
+  
   <script>
     // D3 code goes here or can be linked externally
   </script>
