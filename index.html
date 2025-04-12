@@ -11,14 +11,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Genre-Movie Radial Chart</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Genre-Movie Relationship</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      background: #f8f5e9;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      color: #222;
+    }
+    .container {
+      max-width: 960px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    header p.description {
+      font-size: 16px;
+      color: #444;
+      margin-top: 0;
+      line-height: 1.6;
+    }
+    .interactions {
+      margin-top: 2rem;
+    }
+    .interactions p {
+      margin: 0.2rem 0;
+    }
+    .interactions .hover-text {
+      color: #d1495b;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .interactions .click-text {
+      color: #555;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    svg {
+      display: block;
+      margin: 3rem auto;
+    }
+  </style>
 </head>
 <body>
-  <svg width="1000" height="1400"></svg>
-  <script src="script.js"></script>
+  <div class="container">
+    <header>
+      <h1>🎬 Explore Genre-Movie Relationship</h1>
+      <p class="description">
+        This visualization connects movie genres to individual films using a radial layout. Each arc represents a genre,
+        sized by its frequency. Lines extend to the corresponding movies, labeled along the outer edge.
+      </p>
+    </header>
+
+    <div class="interactions">
+      <p class="hover-text">Click to isolate a genre</p>
+    </div>
+
+    <svg width="1000" height="1000"></svg>
+  </div>
+
+  <script>
+    // D3 code goes here or can be linked externally
+  </script>
 </body>
 </html>
 <!-- partial -->

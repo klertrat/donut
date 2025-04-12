@@ -1,5 +1,5 @@
-const width = 1000;
-const height = 1000;
+const width = 900;
+const height = 900;
 const radius = Math.min(width, height * 2) / 2 - 60;
 const innerRadius = radius / 1.8;
 const labelRadius = radius + 20;
@@ -14,10 +14,10 @@ const tooltip = d3.select("#tooltip");
 
 const color = d3.scaleOrdinal()
   .range([
-    "#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00",
-    "#ffff33", "#a65628", "#f781bf", "#999999", "#66c2a5",
-    "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#ffd92f",
-    "#e5c494", "#b3b3b3", "#1b9e77", "#d95f02", "#7570b3"
+    "#5F8B4C", "#FF9A9A", "#FFDDAB", "#D6B84D", "#B03052",
+    "#EBE8DB", "#FC80A5", "#B8D576", "#E0F47C", "#FFCDB2",
+    "#F7CFD8", "#FFB433", "#FF8282", "#FAFFBC", "#ffd92f",
+    "#e5c494", "#B4EBE6", "#C69359", "#BF4E3D", "#80CBC4"
   ]);
 
 d3.json("https://raw.githubusercontent.com/klertrat/project_infovis/e619a4b3518c7b18b2e4f78e948a1aa292b81842/df_long.json")
@@ -122,7 +122,7 @@ d3.json("https://raw.githubusercontent.com/klertrat/project_infovis/e619a4b3518c
       .attr("xlink:href", d => `#${d.id}`)
       .attr("startOffset", "0")
       .style("font-size", "9px")
-      .style("fill", "#ccc")
+      .style("fill", "#1e1e1e")
       .style("text-anchor", "start")
       .text(d => d.movie);
 
@@ -134,7 +134,7 @@ d3.json("https://raw.githubusercontent.com/klertrat/project_infovis/e619a4b3518c
           const pathLength = path.getTotalLength();
           const avgCharWidth = 4;
           const textLength = d.movie.length * avgCharWidth;
-          const offset = Math.max(pathLength - textLength, 0);
+          const offset = Math.max(pathLength - textLength-15, 0);
           return `${offset}px`;
         });
     }, 0);
