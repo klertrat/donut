@@ -11,6 +11,25 @@ svg {
   overflow: visible;
 }
 
+.donut-chart, #radar, #sunburst {
+  overflow: visible;
+}
+
+
+.scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+}
+
+.chart-row {
+  display: flex;
+  width: max-content;
+  gap: 100px;
+  padding: 2rem;
+}
+
+
 .link {
   stroke: #999;
   stroke-width: 0.7;
@@ -34,6 +53,35 @@ svg {
 .movie-label.active textPath {
   fill: orange;
   font-weight: bold;
+}
+
+.sunburst-segment {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sunburst-segment:hover {
+  stroke: #222;
+  stroke-width: 1.5px;
+  opacity: 0.8;
+}
+
+.sunburst-label {
+  font-size: 9px;
+  pointer-events: none;
+  fill: #222;
+  transition: all 0.2s ease;
+}
+
+.sunburst-label.hoverable {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.sunburst-label.hoverable:hover {
+  fill: #d1495b;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .arc path {

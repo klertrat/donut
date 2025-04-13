@@ -57,7 +57,7 @@
     }
     svg {
       display: block;
-      margin: 3rem auto;
+      margin: 1rem auto;
     }
   </style>
 </head>
@@ -85,35 +85,41 @@
   display: none;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 "></div>
+
     
-    
-    
-    
-    
-<div style="display: flex; justify-content: center; align-items: flex-start; gap: 60px; margin-top: 3rem;">
+<div class="scroll-wrapper">
+  <div class="chart-row">
   <!-- Donut Chart -->
   <div style="flex-shrink: 0;">
-    <svg width="900" height="900"></svg>
+    <svg width="800" height="800"></svg>
   </div>
 
   <!-- Radar Chart and Description (Right Side) -->
-  <div style="display: flex; flex-direction: column; align-items: center; margin-top: 2rem;">
-    <div id="radar-description" style="width: 260px; font-size: 14px; line-height: 1.5; text-align: left; margin-bottom: 1rem;">
-      <strong>Visual Composition</strong><br>
-      This radar chart displays the average visual features of the selected <em>movie</em> or <em>genre</em>.<br>
-      Values range from 0–5 across categories like faces, light, and environment cues.
-    </div>
-    <svg id="radar" width="400" height="400" style="margin-top: 160px;"></svg>
+<div style="display: flex; flex-direction: column; align-items: center; margin-top: 4rem;">
+  <div id="radar-description" style="width: 260px; font-size: 14px; line-height: 1.5; text-align: left; margin-bottom: 1rem; margin-top: 2.5rem;">
+    <strong>Visual Composition</strong><br>
+    This radar chart displays the average visual features of the selected <em>movie</em> or <em>genre</em>.<br>
+    Values range from 0–5 across categories like faces, light, and environment cues.
   </div>
+
+  <!-- ↓ ADD TRIANGLE HERE ↓ -->
+  <div style="
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #ffd92f;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+  "></div>
+
+  <svg id="radar" width="400" height="400" style="margin-top: 0;"></svg>
+</div>
+  <div style="flex-shrink: 0;">
+  <svg id="sunburst" width="800" height="400"></svg>
+</div>
 </div>
 
-  
-  
-  
-  
-  
-  
-  
   
   <script>
     // D3 code goes here or can be linked externally
