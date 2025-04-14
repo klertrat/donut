@@ -66,8 +66,7 @@
     <header>
       <h1>🎬 Movie in focus</h1>
       <p class="description">
-        This visualization connects movie genres to individual films using a radial layout. Each arc represents a genre,
-        sized by its frequency. Lines extend to the corresponding movies, labeled along the outer edge.
+        This space lets you explore how movies are visually and thematically connected. On the left, you’ll see movies linked to their genres. In the middle, a radar chart shows the average score of visual features like faces, lighting, and nature, for the selected movie or genre. On the right, the sunburst chart breaks everything down into layers: from genres to scenes. And at the bottom, you’ll get a preview image from the selected scene to tie it all together.
       </p>
     </header>
 
@@ -90,19 +89,19 @@
 <div class="scroll-wrapper">
   <div class="chart-row">
   <!-- Donut Chart -->
-  <div style="flex-shrink: 0;">
+  <div style="flex-shrink: 0; margin-top: 6rem;">
     <svg width="800" height="800"></svg>
   </div>
 
   <!-- Radar Chart and Description (Right Side) -->
-<div style="display: flex; flex-direction: column; align-items: center; margin-top: 4rem;">
-  <div id="radar-description" style="width: 260px; font-size: 14px; line-height: 1.5; text-align: left; margin-bottom: 1rem; margin-top: 2.5rem;">
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <div id="radar-description" style="width: 400px; font-size: 14px; line-height: 1.5; text-align: left;margin-top: 3rem;">
     <strong>Visual Composition</strong><br>
-    This radar chart displays the average visual features of the selected <em>movie</em> or <em>genre</em>.<br>
+    This radar chart displays the average visual features of the selected <em>genre</em> or <em>movie</em>.<br>
     Values range from 0–5 across categories like faces, light, and environment cues.
   </div>
 
-  <!-- ↓ ADD TRIANGLE HERE ↓ -->
+  <!-- TRIANGLE HERE -->
   <div style="
     width: 0;
     height: 0;
@@ -114,10 +113,21 @@
   "></div>
 
   <svg id="radar" width="400" height="400" style="margin-top: 0;"></svg>
+  <!-- ↓ Image preview ↓ -->
+<div style="margin-top: 0;">  <!-- reduced from 2rem -->
+  <strong>Preview image from selected scene:</strong>
+  <br />
+  <img id="movie-image" src="" alt="click on scene name to preview" width="480" height="270"style="margin-top: 10px; border: 1px solid #1e1e1e;" />
 </div>
-  <div style="flex-shrink: 0;">
-  <svg id="sunburst" width="800" height="400"></svg>
+  
 </div>
+  <div style="flex-shrink: 0;margin-top: 6rem;text-align: right;">
+<strong>Genre → Movie → Frame Structure</strong>
+<svg id="sunburst" width="800" height="400"></svg>
+
+
+</div>
+    
 </div>
 
   

@@ -332,7 +332,7 @@ d3.json("https://raw.githubusercontent.com/klertrat/project_infovis/cd54eaf6bdc3
     if (d.depth === 2) return d3.color(color(d.parent.data.name)).brighter(0.5);
     if (d.depth === 3) return d3.color(color(d.parent.parent.data.name)).brighter(1.1);
   })
-  .attr("stroke", "#303030")
+  .attr("stroke", "#1e1e1e")
   .attr("stroke-width", 0.5)
   .attr("opacity", 0.8) // ← Set default opacity
   
@@ -367,7 +367,10 @@ d3.json("https://raw.githubusercontent.com/klertrat/project_infovis/cd54eaf6bdc3
     if (d.depth === 3) {
       const fileName = d.data.name;
       const fileEntry = rawData.find(row => row["file name"] === fileName);
+      
       if (fileEntry) {
+        const imageUrl = `https://raw.githubusercontent.com/klertrat/project_infovis/66fa6b97afacaad641cdf02f31896b3bf0a98a96/${fileName}.jpg`;
+    d3.select("#movie-image").attr("src", imageUrl);
         drawRadarChart({
           "movie name": `${fileEntry["movie name"]} (${fileEntry["file name"]})`,
           "faces (0-5)": +fileEntry["faces (0-5)"] || 0,
@@ -381,6 +384,7 @@ d3.json("https://raw.githubusercontent.com/klertrat/project_infovis/cd54eaf6bdc3
     } else if (d.depth === 2) {
   const movieName = d.data.name;
   const fileList = d.children.map(child => child.data.name);
+      
 
   const movieEntries = rawData.filter(row => fileList.includes(row["file name"]));
 
