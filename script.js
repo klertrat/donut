@@ -48,7 +48,7 @@ d3.json("https://raw.githubusercontent.com/klertrat/project_infovis/cd54eaf6bdc3
     color.domain(genres);
 
     const pie = d3.pie()
-      .sort(null)
+      .sort((a, b) => a.count - b.count)
       .value(d => d.count)
       .startAngle(-Math.PI)
       .endAngle(0);
